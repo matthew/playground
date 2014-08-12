@@ -11,7 +11,7 @@ build:
 	$(GO) build
 
 run:
-	./$(AOUT)
+	clear && echo && ./$(AOUT); echo; echo; echo
 
 clean:
 	$(GO) clean
