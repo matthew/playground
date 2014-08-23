@@ -2,13 +2,16 @@ GO ?= go
 
 PKG       := "./..."
 TESTS     := ".*"
-TESTFLAGS := -logtostderr -timeout 10s
+TESTFLAGS := -timeout 10s
 AOUT      := playground
 
-all: build run
+all: build test run
 
 build:
 	$(GO) build
+
+test:
+	$(GO) test -run $(TESTS) $(PKG) $(TESTFLAGS)
 
 run:
 	clear && echo && ./$(AOUT); echo; echo; echo
